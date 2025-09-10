@@ -1,0 +1,21 @@
+export default function Agents() {
+  return (
+    <section>
+      <h2>Our Agents</h2>
+      <div className="card-container">
+        <div className="card">
+          <h3>Ravi Kumar</h3>
+          <p>Specialist in Health & Term Insurance.</p>
+        </div>
+        <div className="card">
+          <h3>Priya Sharma</h3>
+          <p>Expert in Motor Insurance.</p>
+        </div>
+        <div className="card">
+          <h3>John Mathew</h3>
+          <p>Life Insurance expert with 10+ years experience.</p>
+        </div>
+      </div>
+    </section>
+  );
+}
