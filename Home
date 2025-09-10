@@ -1,0 +1,21 @@
+export default function Home() {
+  return (
+    <section>
+      <h2>Available Insurance Policies</h2>
+      <div className="card-container">
+        <div className="card">
+          <h3>Family Health Plan</h3>
+          <p><strong>Coverage:</strong> ₹10,00,000</p>
+          <p>✔ Free annual health checkup</p>
+          <p>✔ Cashless treatment at 5000+ hospitals</p>
+        </div>
+        <div className="card">
+          <h3>Senior Citizen Health Plan</h3>
+          <p><strong>Coverage:</strong> ₹5,00,000</p>
+          <p>✔ Critical illness cover</p>
+          <p>✔ No pre-medical checkup required</p>
+        </div>
+      </div>
+    </section>
+  );
+}
