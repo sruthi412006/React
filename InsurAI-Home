@@ -1,0 +1,102 @@
+import React from "react";
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+
+// Navbar
+function Navbar() {
+  return (
+    <nav className="flex justify-between items-center px-8 py-4 bg-white shadow-md">
+      <h1 className="text-2xl font-bold text-blue-700">InsurAI</h1>
+      <ul className="flex gap-6 text-gray-700 font-medium">
+        <li><a href="#plans" className="hover:text-blue-600">Plans</a></li>
+        <li><a href="#apply" className="hover:text-blue-600">Apply</a></li>
+        <li><a href="#claim" className="hover:text-blue-600">Claim</a></li>
+        <li><a href="#about" className="hover:text-blue-600">About</a></li>
+        <li><a href="#profile" className="hover:text-blue-600">Profile</a></li>
+      </ul>
+    </nav>
+  );
+}
+
+// Hero Section
+function HeroSection() {
+  return (
+    <section className="flex flex-col items-center text-center py-20 px-6">
+      <motion.h2 
+        initial={{ opacity: 0, y: -30 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        transition={{ duration: 0.8 }}
+        className="text-4xl font-bold text-gray-800 mb-4"
+      >
+        Welcome to InsurAI
+      </motion.h2>
+      <p className="text-lg text-gray-600 max-w-2xl mb-6">
+        Corporate Policy Automation and Intelligence System – making insurance management
+        smarter, faster, and more secure.
+      </p>
+      <Button className="bg-blue-600 text-white px-6 py-3 rounded-xl shadow-md hover:bg-blue-700">
+        Get Started
+      </Button>
+    </section>
+  );
+}
+
+// Feature Card
+function FeatureCard({ title, desc }) {
+  return (
+    <Card className="shadow-lg rounded-2xl border-none">
+      <CardContent className="p-6">
+        <h3 className="text-xl font-semibold text-blue-700">{title}</h3>
+        <p className="text-gray-600 mt-2">{desc}</p>
+      </CardContent>
+    </Card>
+  );
+}
+
+// Features Section
+function FeaturesSection() {
+  const features = [
+    { title: "Insurance Plans", desc: "Explore and compare corporate insurance policies." },
+    { title: "Apply Insurance", desc: "Easily apply for the best suited policies online." },
+    { title: "Claim Insurance", desc: "Quick and hassle-free claim process with automation." },
+    { title: "Profile", desc: "Manage your details, policies, and claim history securely." },
+    { title: "About Project", desc: "Learn more about InsurAI and its benefits for organizations." },
+  ];
+
+  return (
+    <section id="features" className="grid grid-cols-1 md:grid-cols-3 gap-6 px-10 py-12">
+      {features.map((feature, index) => (
+        <motion.div 
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: index * 0.2 }}
+        >
+          <FeatureCard title={feature.title} desc={feature.desc} />
+        </motion.div>
+      ))}
+    </section>
+  );
+}
+
+// Footer
+function Footer() {
+  return (
+    <footer className="bg-blue-700 text-white text-center py-6 mt-auto">
+      <p>© 2025 InsurAI – Corporate Policy Automation & Intelligence System</p>
+    </footer>
+  );
+}
+
+// Home Page (Main Component)
+export default function HomePage() {
+  return (
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-blue-50 to-blue-100">
+      <Navbar />
+      <HeroSection />
+      <FeaturesSection />
+      <Footer />
+    </div>
+  );
+}
